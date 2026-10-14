@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Quản lý thời khóa biểu</title>
+
+    <style>
+        /* Giao diện chung */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #234267;
+        }
+
+        /* Menu bên trái */
+        .menu {
+            background-color: #dceeff;
+            width: 220px;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .menu h2 {
+            color: #2563a6;
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+
+        .menu a {
+            display: block;
+            color: #234267;
+            text-decoration: none;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+        }
+
+        .menu a:hover,
+        .menu a.active {
+            background-color: #b8dcff;
+        }
+
+        .menu .logout {
+            margin-top: 35px;
+            color: #c24141;
+        }
+
+        /* Nội dung trang chủ */
+        .main {
+            margin-left: 220px;
+            padding: 30px;
+        }
+
+        .main h1 {
+            color: #2563a6;
+            margin-top: 0;
+        }
+
+        .subtitle {
+            color: #6b829b;
+        }
+
+        /* Khu vực thống kê */
+        .overview {
+            background-color: #eaf4ff;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        .overview h2 {
+            color: #2563a6;
+            margin-top: 0;
+        }
+
+        /* Các ô thống kê */
+        .card {
+            display: inline-block;
+            background-color: white;
+            width: 28%;
+            padding: 18px;
+            margin: 10px 10px 0 0;
+            border-radius: 8px;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+
+        .card p {
+            color: #526b85;
+        }
+
+        .card h2 {
+            color: #2563a6;
+            margin-bottom: 5px;
+        }
+
+        /* Khu vực danh sách môn học */
+        .section {
+            background-color: #f5faff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .section h2 {
+            color: #2563a6;
+            margin-top: 0;
+        }
+
+        .subject {
+            background-color: white;
+            padding: 15px;
+            margin-top: 10px;
+            border-left: 4px solid #8bc4ff;
+            border-radius: 4px;
+        }
+
+        .subject h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menu điều hướng bên trái -->
+    <div class="menu">
+        <h2>📚 My Timetable</h2>
+
+        <a href="index.html" class="active">🏠 Trang chủ</a>
+        <a href="add-schedule.html">➕ Thêm lịch học</a>
+        <a href="timetable.html">📅 Thời khóa biểu</a>
+        <a href="schedule-detail.html">📖 Chi tiết môn học</a>
+        <a href="subjects.html">📝 Quản lý môn học</a>
+
+        <a href="login.html" class="logout">↪ Đăng xuất</a>
+    </div>
+
+    <!-- Nội dung trang chủ -->
+    <div class="main">
+
+        <h1>Trang chủ</h1>
+
+        <p class="subtitle">
+            Chào mừng bạn đến với thời khóa biểu của mình!
+        </p>
+
+        <!-- Tổng quan học tập -->
+        <div class="overview">
+            <h2>Tổng quan học tập</h2>
+
+            <div class="card">
+                <p>Tổng số môn học</p>
+                <h2>7</h2>
+            </div>
+
+            <div class="card">
+                <p>Lịch học tuần này</p>
+                <h2>--</h2>
+            </div>
+
+            <div class="card">
+                <p>Lịch học hôm nay</p>
+                <h2>--</h2>
+            </div>
+        </div>
+
+        <!-- Danh sách môn học -->
+        <div class="section">
+            <h2>📚 Các môn học của tôi</h2>
+
+            <div class="subject">
+                <h3>Kiến trúc và tổ chức máy tính</h3>
+            </div>
+
+            <div class="subject">
+                <h3>Lập trình hướng đối tượng</h3>
+            </div>
+
+            <div class="subject">
+                <h3>Thiết kế Web</h3>
+            </div>
+
+            <div class="subject">
+                <h3>Toán rời rạc</h3>
+            </div>
+
+            <div class="subject">
+                <h3>Tư tưởng Hồ Chí Minh</h3>
+            </div>
+
+            <div class="subject">
+                <h3>Cấu trúc dữ liệu và giải thuật</h3>
+            </div>
+
+            <div class="subject">
+                <h3>Giáo dục thể chất</h3>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+```
