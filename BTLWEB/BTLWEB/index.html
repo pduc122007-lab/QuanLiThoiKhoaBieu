@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyTime - Trang chủ</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/auth.js" defer></script>
+    <script src="js/storage.js" defer></script>
+    <script src="js/index.js" defer></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <a class="brand" href="index.html">
+            <span class="brand-icon">ST</span>
+            <span>
+                StudyTime
+                <small>QUẢN LÝ LỊCH HỌC</small>
+            </span>
+        </a>
+
+        <p class="menu-label">MENU CHÍNH</p>
+
+        <nav class="menu">
+            <a class="menu-link active" href="index.html">
+                <span>⌂</span> Trang chủ
+            </a>
+            <a class="menu-link" href="timetable.html">
+                <span>▦</span> Thời khóa biểu
+            </a>
+            <a class="menu-link" href="add-schedule.html">
+                <span>＋</span> Thêm lịch học
+            </a>
+            <a class="menu-link" href="courses.html">
+                <span>▤</span> Quản lý môn học
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="avatar">AD</div>
+            <div>
+                <strong>Sinh viên</strong>
+                <small>Không gian học tập</small>
+            </div>
+        </div>
+        <button class="logout-button" id="logoutButton">
+            Đăng xuất
+        </button>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">TỔNG QUAN</p>
+                <h1>Trang chủ</h1>
+            </div>
+
+            <a class="button button-primary" href="add-schedule.html">
+                ＋ Thêm lịch học
+            </a>
+        </header>
+
+        <section class="welcome-card">
+            <div>
+                <p class="welcome-kicker">
+                    CHÀO MỪNG BẠN ĐẾN VỚI STUDYTIME
+                </p>
+
+                <h2>
+                    Học tập có kế hoạch,<br>
+                    mỗi ngày hiệu quả hơn.
+                </h2>
+
+                <p>
+                    Quản lý môn học và theo dõi lịch học
+                    của bạn tại một nơi.
+                </p>
+
+                <a class="button button-light" href="timetable.html">
+                    Xem thời khóa biểu →
+                </a>
+            </div>
+
+            <div class="welcome-art" aria-hidden="true">
+                <div class="art-calendar">
+                    <div class="art-top"></div>
+                    <div class="art-grid">
+                        <i></i><i></i><i></i>
+                        <i></i><i></i><i></i>
+                        <i></i><i></i><i></i>
+                    </div>
+                    <span>✓</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-icon blue">▤</div>
+                <div>
+                    <p>Tổng số môn học</p>
+                    <strong id="courseCount">0</strong>
+                    <small>Môn học đã lưu</small>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon purple">▦</div>
+                <div>
+                    <p>Buổi học trong tuần</p>
+                    <strong id="weekCount">0</strong>
+                    <small>Theo lịch đã tạo</small>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon orange">◷</div>
+                <div>
+                    <p>Lịch học sắp tới</p>
+                    <strong id="upcomingCount">0</strong>
+                    <small>Trong 7 ngày tới</small>
+                </div>
+            </article>
+        </section>
+
+        <section class="content-card">
+            <div class="section-heading">
+                <div>
+                    <h2>Lịch học sắp tới</h2>
+                    <p>Những buổi học gần nhất của bạn</p>
+                </div>
+
+                <a class="text-link" href="timetable.html">
+                    Xem tất cả →
+                </a>
+            </div>
+
+            <div id="upcomingList" class="upcoming-list"></div>
+        </section>
+
+        <footer class="footer">
+            StudyTime · Công cụ hỗ trợ quản lý thời khóa biểu cá nhân
+        </footer>
+    </main>
+</body>
+</html>
