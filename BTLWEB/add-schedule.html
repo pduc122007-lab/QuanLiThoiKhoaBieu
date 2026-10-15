@@ -1,149 +1,140 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm lịch học - My Timetable</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Thêm Lịch Học</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdfbf7;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            background-color: #ffffff;
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333333;
+            margin-top: 0;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555555;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Giúp padding không bị tràn viền */
+            font-size: 14px;
+        }
+
+     
+        input:focus, textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+      
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            float: right;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+       
+        button[type="reset"] {
+            background-color: #f1f1f1;
+            color: #333;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Thanh menu ben trai -->
-    <div class="sidebar">
-        <h2>My Timetable</h2>
+    <h2>Thêm Lịch Học</h2>
 
-        <a href="index.html">🏠 Trang chủ</a>
-        <a href="timetable.html">📅 Lịch tuần</a>
-        <a href="add-schedule.html" class="active">➕ Thêm lịch học</a>
-        <a href="subjects.html">📚 Danh sách môn</a>
+    <form>
+        <p>
+            <label for="subject">Tên môn học:</label><br>
+            <input type="text" id="subject" name="subject" placeholder="VD: Lập trình C" required>
+        </p>
 
-        <div class="note">
-            <h3>Ghi chú</h3>
-            <p>Quản lý lịch học của bạn dễ dàng và khoa học.</p>
-        </div>
-    </div>
+        <!-- 2. Ngày học -->
+        <p>
+            <label for="date">Ngày học:</label><br>
+            <input type="date" id="date" name="date" required>
+        </p>
 
-    <!-- Noi dung chinh -->
-    <div class="main">
+        <!-- 3. Giờ học (Bắt đầu và Kết thúc) -->
+        <p>
+            <label for="time1">Thời gian học:</label><br>
+            <label for="time1">Từ:</label>
+                <input type="time" id="time1" name="start_time" required>
+            <label for="time2">Đến:</label>
+                <input type="time" id="time2" name="end_time" required>
+        </p>
 
-        <div class="header">
-            <div>
-                <h1>Thêm lịch học</h1>
-                <p>Điền thông tin để tạo lịch học mới.</p>
-            </div>
+        <!-- 4. Phòng học -->
+        <p>
+            <label for="room">Phòng học:</label><br>
+            <input type="text" id="room" name="room" placeholder="VD: Phòng 302 - Nhà A" required>
+        </p>
 
-            <div class="avatar">SV</div>
-        </div>
+        <!-- 5. Giảng viên -->
+        <p>
+            <label for="teacher">Giảng viên (nếu cần):</label><br>
+            <input type="text" id="teacher" name="teacher" placeholder="VD: Thầy Nam">
+        </p>
 
-        <!-- Form nhap lich hoc -->
-        <div class="schedule">
-            <h2>Thông tin buổi học</h2>
-            <p class="description">
-                Vui lòng điền đầy đủ thông tin bên dưới.
-            </p>
+        <!-- 6. Ghi chú thêm -->
+        <p>
+            <label for="note">Ghi chú:</label><br>
+            <textarea id="note" name="note" rows="3" placeholder="Nhập ghi chú (nếu có)..."></textarea>
+        </p>
 
-            <form action="#" method="get">
-
-                <div class="form-group">
-                    <label for="subject">Tên môn học</label>
-                    <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        placeholder="Ví dụ: Lập trình C++"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="day">Thứ trong tuần</label>
-                    <select id="day" name="day" required>
-                        <option value="">-- Chọn thứ --</option>
-                        <option value="2">Thứ 2</option>
-                        <option value="3">Thứ 3</option>
-                        <option value="4">Thứ 4</option>
-                        <option value="5">Thứ 5</option>
-                        <option value="6">Thứ 6</option>
-                        <option value="7">Thứ 7</option>
-                        <option value="cn">Chủ nhật</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="date">Ngày học</label>
-                    <input
-                        type="date"
-                        id="date"
-                        name="date"
-                        required>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="start">Giờ bắt đầu</label>
-                        <input
-                            type="time"
-                            id="start"
-                            name="start"
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="end">Giờ kết thúc</label>
-                        <input
-                            type="time"
-                            id="end"
-                            name="end"
-                            required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="room">Phòng học</label>
-                    <input
-                        type="text"
-                        id="room"
-                        name="room"
-                        placeholder="Ví dụ: A101"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="teacher">Giảng viên</label>
-                    <input
-                        type="text"
-                        id="teacher"
-                        name="teacher"
-                        placeholder="Nhập tên giảng viên">
-                </div>
-
-                <div class="form-group">
-                    <label for="note">Ghi chú</label>
-                    <textarea
-                        id="note"
-                        name="note"
-                        rows="4"
-                        placeholder="Nhập ghi chú nếu có"></textarea>
-                </div>
-
-                <div class="form-buttons">
-                    <button type="submit" class="save-button">
-                        Lưu lịch học
-                    </button>
-
-                    <button type="reset" class="reset-button">
-                        Nhập lại
-                    </button>
-                </div>
-
-            </form>
-        </div>
-
-        <div class="footer">
-            My Timetable - Website quản lý thời khóa biểu
-        </div>
-
-    </div>
+        <!-- 7. Nút bấm -->
+        <p>
+            <button type="reset">Nhập lại</button>
+            <button type="submit">Thêm lịch học</button>
+        </p>
+    </form>
 
 </body>
 </html>
