@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyTime - Thêm lịch học</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/add-schedule.css">
+    <script src="js/auth.js" defer></script>
+    <script src="js/storage.js" defer></script>
+    <script src="js/add-schedule.js" defer></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <a class="brand" href="index.html">
+            <span class="brand-icon">ST</span>
+            <span>
+                StudyTime
+                <small>QUẢN LÝ LỊCH HỌC</small>
+            </span>
+        </a>
+
+        <p class="menu-label">MENU CHÍNH</p>
+
+        <nav class="menu">
+            <a class="menu-link" href="index.html">
+                <span>⌂</span> Trang chủ
+            </a>
+            <a class="menu-link" href="timetable.html">
+                <span>▦</span> Thời khóa biểu
+            </a>
+            <a class="menu-link active" href="add-schedule.html">
+                <span>＋</span> Thêm lịch học
+            </a>
+            <a class="menu-link" href="courses.html">
+                <span>▤</span> Quản lý môn học
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="avatar">AD</div>
+            <div>
+                <strong>Sinh viên</strong>
+                <small>Không gian học tập</small>
+            </div>
+        </div>
+        <button class="logout-button" id="logoutButton">
+            Đăng xuất
+        </button>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">LÊN KẾ HOẠCH</p>
+                <h1>Thêm lịch học</h1>
+                <p class="page-description">
+                    Điền thông tin bên dưới để tạo một buổi học mới.
+                </p>
+            </div>
+        </header>
+
+        <section class="content-card form-card">
+            <div class="section-heading">
+                <div>
+                    <h2>Thông tin buổi học</h2>
+                    <p>Các trường có dấu * là bắt buộc.</p>
+                </div>
+
+                <div class="form-symbol">＋</div>
+            </div>
+
+            <form id="scheduleForm">
+                <div class="form-grid">
+                    <div class="form-field full-width">
+                        <label for="subject">
+                            Môn học <span>*</span>
+                        </label>
+
+                        <select id="subject" required>
+                            <option value="">-- Chọn môn học --</option>
+                        </select>
+
+                        <small class="field-hint">
+                            Chưa có môn học?
+                            <a href="courses.html">Thêm môn học tại đây</a>.
+                        </small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="studyDate">
+                            Ngày học <span>*</span>
+                        </label>
+                        <input type="date" id="studyDate" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="room">Phòng học</label>
+                        <input
+                            type="text"
+                            id="room"
+                            maxlength="50"
+                            placeholder="Ví dụ: A203"
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="startTime">
+                            Giờ bắt đầu <span>*</span>
+                        </label>
+                        <input type="time" id="startTime" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="endTime">
+                            Giờ kết thúc <span>*</span>
+                        </label>
+                        <input type="time" id="endTime" required>
+                    </div>
+
+                    <div class="form-field full-width">
+                        <label for="note">Ghi chú</label>
+                        <textarea
+                            id="note"
+                            rows="3"
+                            maxlength="300"
+                            placeholder="Nội dung cần chuẩn bị, bài tập..."
+                        ></textarea>
+                    </div>
+                </div>
+
+                <div
+                    id="formMessage"
+                    class="form-message"
+                    role="status"
+                    hidden
+                ></div>
+
+                <div class="form-actions">
+                    <a class="button button-outline" href="timetable.html">
+                        Hủy
+                    </a>
+
+                    <button class="button button-primary" type="submit">
+                        Lưu lịch học
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
