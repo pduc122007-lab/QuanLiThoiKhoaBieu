@@ -4,7 +4,7 @@ const weekCount = document.getElementById("weekCount");
 const upcomingCount = document.getElementById("upcomingCount");
 const upcomingList = document.getElementById("upcomingList");
 
-// Cập nhật các số liệu trên trang chủ.
+
 function renderHome() {
     let courses = getCourses();
     let schedules = sortSchedules(getSchedules());
@@ -12,7 +12,6 @@ function renderHome() {
     let today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    // Tìm ngày thứ Hai của tuần này.
     let monday = new Date(today);
     let day = monday.getDay();
 
@@ -50,7 +49,7 @@ function renderHome() {
     renderUpcoming(upcoming);
 }
 
-// Hiển thị tối đa 5 buổi học sắp tới.
+
 function renderUpcoming(schedules) {
     upcomingList.replaceChildren();
 
